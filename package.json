@@ -1,0 +1,29 @@
+{
+  "name": "10xers_test",
+  "version": "1.0.0",
+  "description": "mobile phone api",
+  "main": "index.js",
+  "scripts": {
+    "init-data": "npx sequelize db:migrate && npx sequelize db:seed:all",
+    "undo-data": "npx sequelize db:migrate:undo:all && npx sequelize db:seed:undo:all",
+    "dev": "nodemon --exec babel-node index.js"
+  },
+  "author": "Galang Ardian",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "^7.24.5",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.24.5",
+    "@babel/register": "^7.23.7",
+    "bcrypt": "^5.1.1",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.11.5",
+    "sequelize": "^6.37.3",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.6.2"
+  }
+}
