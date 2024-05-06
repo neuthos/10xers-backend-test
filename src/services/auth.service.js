@@ -1,6 +1,7 @@
 const {User} = require("../models");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const {errorHandler} = require("../utils/responseHandler");
 
 const findByEmail = async (email) => {
   const user = await User.findOne({where: {email}});
@@ -25,11 +26,13 @@ const verifyAccessToken = (token) => {
   }
 };
 
-const login = async (email, password) => {
+const login = async (res, email, password) => {
   const user = await findByEmail(email);
   if (!user) throw new Error("You are not registered yet");
   const isValidPassword = await bcrypt.compare(password, user.password);
-  if (!isValidPassword) throw new Error("Invalid email or password");
+  if (!isValidPassword) {
+    return errorHandler(res, "Invalid email or password", 401);
+  }
   return user;
 };
 

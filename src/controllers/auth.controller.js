@@ -6,7 +6,7 @@ const login = async (req, res, next) => {
     const {email, password} = req.body;
     if (!email) errorHandler("Email is required");
     if (!password) errorHandler("Password is required");
-    const user = await authService.login(email, password);
+    const user = await authService.login(res, email, password);
     const accessToken = authService.generateAccessToken(user);
 
     return successHandler(res, "Login success", {

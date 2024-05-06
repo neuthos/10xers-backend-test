@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "init-data": "npx sequelize db:migrate && npx sequelize db:seed:all",
-    "undo-data": "npx sequelize db:migrate:undo:all && npx sequelize db:seed:undo:all",
-    "dev": "nodemon --exec babel-node index.js"
+    "undo-data": "npx sequelize db:migrate:undo:all",
+    "dev": "nodemon --exec babel-node index.js",
+    "test": "cross-env NODE_ENV=test && npm run undo-data && npm run init-data && jest --watchAll --no-cache --detectOpenHandles --forceExit"
   },
   "author": "Galang Ardian",
   "license": "ISC",
@@ -16,14 +17,17 @@
     "@babel/preset-env": "^7.24.5",
     "@babel/register": "^7.23.7",
     "bcrypt": "^5.1.1",
+    "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2",
     "pg": "^8.11.5",
     "sequelize": "^6.37.3",
+    "supertest": "^7.0.0",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "jest": "^29.7.0",
     "sequelize-cli": "^6.6.2"
   }
 }
