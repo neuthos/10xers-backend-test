@@ -1,0 +1,2389 @@
+{
+	"info": {
+		"_postman_id": "01da31e5-0bc7-4c2e-b358-9c58acbb3f20",
+		"name": "Mobile Phone Store",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "14405527"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"employee@mail.com\",\n    \"password\": \"employee\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/auth/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Not registered",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"a@mail.com\",\n    \"password\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-PxX1WOPlLzZYotZ8E7kWkljpW9Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 06:13:48 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"You are not registered yet\",\n    \"code\": 500\n}"
+						},
+						{
+							"name": "Login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"employee@mail.com\",\n    \"password\": \"employee\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "488"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1e8-p7LzuZdH7WuPZivuAZAiVW0WEFM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:31:19 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Login success\",\n    \"data\": {\n        \"accessToken\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA\",\n        \"email\": \"employee@mail.com\"\n    }\n}"
+						},
+						{
+							"name": "Invalid Email or Password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"employee@mail.com\",\n    \"password\": \"employee1\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/login",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-W3oK+McIQALx/rx4Oy3R7ETmvRs\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:31:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Invalid email or password\",\n    \"code\": 500\n}"
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user2@mail.com\",\n    \"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/auth/register",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"g@mail.com\",\n    \"password\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/register",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-Kar52w3f+C0Wv1J8YErUXTgEH5A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 06:29:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Register success\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Employee",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZmU1ZGVhNmUtODllNi00YTdjLWE3YjMtNjZjYjAxZjFjYzUwIiwiZW1haWwiOiJ1c2VyQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkcTNldkcwd3M1V3BTYUhlbFJQWEpqdXUudjl3dFJpOU5jSklFNk1DN1JySXpQZ0RNWUtNR2kiLCJyb2xlIjoiQ1VTVE9NRVJTIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC4zNDZaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC4zNDZaIn0.RDkaJa-Yy31OwjmOuDoyQgMyg-lW_RApgZJuQ1JZY3Q",
+								"uuid": "e58fe6fc-7765-4ed3-8f48-d15af40b8fc1"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"employee2@mail.com\",\n    \"password\": \"123123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/auth/register-admin",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"auth",
+								"register-admin"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Employee",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"employee2@mail.com\",\n    \"password\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/register-admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"register-admin"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-Kar52w3f+C0Wv1J8YErUXTgEH5A\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:33:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Register success\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Access Token Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"employee2@mail.com\",\n    \"password\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/register-admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"register-admin"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-YQuDxMzYU8pq2wbRq+OZ/NZb/ZY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:37:17 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Access token not provided\",\n    \"code\": 401\n}"
+						},
+						{
+							"name": "Unauthorized",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZmU1ZGVhNmUtODllNi00YTdjLWE3YjMtNjZjYjAxZjFjYzUwIiwiZW1haWwiOiJ1c2VyQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkcTNldkcwd3M1V3BTYUhlbFJQWEpqdXUudjl3dFJpOU5jSklFNk1DN1JySXpQZ0RNWUtNR2kiLCJyb2xlIjoiQ1VTVE9NRVJTIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC4zNDZaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC4zNDZaIn0.RDkaJa-Yy31OwjmOuDoyQgMyg-lW_RApgZJuQ1JZY3Q"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"employee2@mail.com\",\n    \"password\": \"123123\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/auth/register-admin",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"auth",
+										"register-admin"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-aBKSxlippGxondH3ZFcb3G1484k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:37:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"You are not authorized to access this route\",\n    \"code\": 403\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Categories",
+			"item": [
+				{
+					"name": "Categories",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw",
+								"uuid": "e6e0b5b6-fef9-4e22-ab53-4d7d2d379d1f"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Samsung\",\n    \"description\": \"Samsung description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Categories",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Samsung\",\n    \"description\": \"Samsung description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "231"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e7-sq1ye/KRGQKECxqFawv7fE8/rok\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:53:56 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category added\",\n    \"data\": {\n        \"uuid\": \"dd2bcc91-6a87-4aa5-8310-b17f30ecb05a\",\n        \"name\": \"Samsung\",\n        \"description\": \"Samsung description\",\n        \"updated_at\": \"2024-05-04T11:53:56.290Z\",\n        \"created_at\": \"2024-05-04T11:53:56.290Z\"\n    }\n}"
+						},
+						{
+							"name": "Error Field",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"description\": \"Samsung description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "66"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"42-Z8+mhQ8VLlQTbJ06HodSnJOzfv8\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:34:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Category name is required\",\n    \"code\": 500\n}"
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/categories",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Categories",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/categories",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "427"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1ab-40ONQbpxH62/oO6JD5TIyETlx6Q\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:53:35 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"List of categories\",\n    \"data\": [\n        {\n            \"uuid\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\",\n            \"name\": \"Asus\",\n            \"description\": \"lorem ipsum sir dolor amet\",\n            \"created_at\": \"2024-05-04T10:12:40.409Z\",\n            \"updated_at\": \"2024-05-04T10:12:40.409Z\"\n        },\n        {\n            \"uuid\": \"6d25cdfc-c24d-4501-89c6-1ad57199b8ed\",\n            \"name\": \"Apple\",\n            \"description\": \"lorem ipsum sir dolor amet\",\n            \"created_at\": \"2024-05-04T10:12:40.409Z\",\n            \"updated_at\": \"2024-05-04T10:12:40.409Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA",
+								"uuid": "e7def0cb-fdcd-4acc-8b23-b9eef781736f"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Nokia\",\n    \"description\": \"Nokia description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/categories/:uuid",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"categories",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "de7bb95c-1468-44d9-9e55-90017146",
+									"uuid": "e508eff1-197d-4a58-b189-f9a3df864552"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Categories",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Nokia\",\n    \"description\": \"Nokia description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/categories/:uuid",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "de7bb95c-1468-44d9-9e55-90017146ec90"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "57"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"39-6tg52qoV68SwSKM/rfC7VqFnRhI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:42:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category updated\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Nokia\",\n    \"description\": \"Nokia description\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/categories/:uuid",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "de7bb95c-1468-44d9-9e55-90017146"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-XqoCIt1KYdO2czCbtWYte3agT9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:45:07 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Category not found\",\n    \"code\": 404\n}"
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA",
+								"uuid": "62b6010c-e168-4a0f-b913-bcbc472951d0"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/api/categories/:uuid",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"categories",
+								":uuid"
+							],
+							"variable": [
+								{
+									"key": "uuid",
+									"value": "de7bb95c-1468-44d9-9e55-90017146ec90",
+									"uuid": "cc40de6a-1957-4735-838f-f54a41dfddd2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Categories",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/v1/api/categories/:uuid",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "de7bb95c-1468-44d9-9e55-90017146ec90"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-c3LFPMnpOCOCtx1waHbBMY6GTiU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:46:21 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Category deleted\",\n    \"data\": 1\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiOGZlNzU3NjEtOWVlZC00YzNiLThhZjItNTE4MDcyNjNkZWFiIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJDlTMm9oTFdOcjIwWDdXZk9sVzVkNmVETklBV3BESldRL250T3o4eElhUDNDQk85MEZDaUdXIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIiwidXBkYXRlZEF0IjoiMjAyNC0wNS0wNFQxMDoxMjo0MC40MDJaIn0.A-kay4nMoqtKezHAy2fUTLgobYcHtiWemK3jAZlgWGA"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/v1/api/categories/:uuid",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"categories",
+										":uuid"
+									],
+									"variable": [
+										{
+											"key": "uuid",
+											"value": "de7bb95c-1468-44d9-9e55-90017146ec"
+										}
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "59"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3b-XqoCIt1KYdO2czCbtWYte3agT9g\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:46:04 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Category not found\",\n    \"code\": 404\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/api/products?page=1&limit=10&query=",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Start page"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Size"
+								},
+								{
+									"key": "query",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Products",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/api/products?page=1&limit=10&query=",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Start page"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Size"
+										},
+										{
+											"key": "query",
+											"value": ""
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "441"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1b9-aBScEeLVBjtvtw2BP/J+CMi8tbA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 11:59:32 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"List of products\",\n    \"data\": {\n        \"products\": [\n            {\n                \"uuid\": \"4895cc46-299d-44fd-9ad3-dddfe2077112\",\n                \"name\": \"Asus Rog 64 GB\",\n                \"price\": \"49.99\",\n                \"description\": \"Asus rog 64 GB description\",\n                \"seo_slug\": \"asus-rog-64-gb\",\n                \"stock\": 100\n            },\n            {\n                \"uuid\": \"e877c6e5-4145-4e27-85f4-76848d920090\",\n                \"name\": \"Iphone 16 Pro\",\n                \"price\": \"1229.99\",\n                \"description\": \"Iphone 16 Pro description.\",\n                \"seo_slug\": \"iphone-16-pro\",\n                \"stock\": 50\n            }\n        ],\n        \"totalPages\": 1,\n        \"currentPage\": \"1\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Products ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/v1/api/products/:productId",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"products",
+								":productId"
+							],
+							"variable": [
+								{
+									"key": "productId",
+									"value": "4895cc46-299d-44fd-9ad3-dddfe2077112",
+									"uuid": "84889335-cbf1-437d-aa7f-043ad439d10e"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Products ID",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/v1/api/products/:productId",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products",
+										":productId"
+									],
+									"variable": [
+										{
+											"key": "productId",
+											"value": "4895cc46-299d-44fd-9ad3-dddfe2077112"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "353"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"161-TP6RNiDAdp8nX+M9gyt0iZ4dG+c\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:00:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product found\",\n    \"data\": {\n        \"uuid\": \"4895cc46-299d-44fd-9ad3-dddfe2077112\",\n        \"name\": \"Asus Rog 64 GB\",\n        \"description\": \"Asus rog 64 GB description\",\n        \"seo_slug\": \"asus-rog-64-gb\",\n        \"stock\": 100,\n        \"price\": \"49.99\",\n        \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\",\n        \"created_at\": \"2024-05-04T10:12:40.411Z\",\n        \"updated_at\": \"2024-05-04T10:12:40.411Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw",
+								"uuid": "04dcec5f-b9c0-4f94-a584-4672365453d6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Asus Rog 128 GB\",\n    \"description\": \"Asus rog 128 GB description\",\n    \"seo_slug\": \"asus-rog-128-gb\",\n    \"image_url\": \"http://imageurl.com\",\n    \"stock\": 20,\n    \"price\": 449.99,\n    \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZmIyNWExNTItNmMxNC00ZTVlLWI5MWItYTc2NDM2OGYwZjkxIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGJNVWw0QnVyZmRva3EvbW1UaWRKOXVVeHVJSHJQcUcudUowMUFFenQxTHVzYTJRZzFyMTRPIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDRUMTQ6MTU6MjIuNDc1WiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTA0VDE0OjE1OjIyLjQ3NVoifQ.9zmbNiWjA03nncTQI5M-Efjyte0MHq5dvQ9_dot0Up8"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Asus Rog 128 GB\",\n    \"description\": \"Asus rog 128 GB description\",\n    \"seo_slug\": \"asus-rog-128-gb\",\n    \"image_url\": \"http://imageurl.com\",\n    \"stock\": 20,\n    \"price\": 449.99,\n    \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "392"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"188-2+Mbn3ynKdV5J6Oo2t8XKUHRJZ0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sun, 05 May 2024 14:32:09 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product created\",\n    \"data\": {\n        \"uuid\": \"f9175df6-f44b-447e-a07b-56754b7891c3\",\n        \"name\": \"Asus Rog 128 GB\",\n        \"description\": \"Asus rog 128 GB description\",\n        \"seo_slug\": \"asus-rog-128-gb\",\n        \"image_url\": \"http://imageurl.com\",\n        \"stock\": 20,\n        \"price\": \"449.99\",\n        \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\",\n        \"updated_at\": \"2024-05-05T14:32:09.533Z\",\n        \"created_at\": \"2024-05-05T14:32:09.533Z\"\n    }\n}"
+						},
+						{
+							"name": "Field Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Asus Rog 64 GB\",\n    \"description\": \"Asus rog 64 GB description\",\n    \"seo_slug\": \"asus-rog-64-gb\",\n    \"stock\": 100,\n    \"price\": 49.99,\n    \"category_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-mG+liygBjAmPYZpJ0RkToEW3J/w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:04:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"category_id is required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw",
+								"uuid": "1b65cb93-8883-401b-a4d9-6feb092f1c6d"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Asus Phone\",\n    \"description\": \"Asus Phone description\",\n    \"seo_slug\": \"asus-phone\",\n    \"stock\": 20,\n    \"price\": 122.99,\n    \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/products/91460af5-43e0-414b-a62c-a9e6576068b4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"products",
+								"91460af5-43e0-414b-a62c-a9e6576068b4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Products",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Asus Phone\",\n    \"description\": \"Asus Phone description\",\n    \"seo_slug\": \"asus-phone\",\n    \"stock\": 20,\n    \"price\": 122.99,\n    \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products/91460af5-43e0-414b-a62c-a9e6576068b4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products",
+										"91460af5-43e0-414b-a62c-a9e6576068b4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "349"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"15d-77OsxHpfYin1kSj34w9V4+TBeVE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:17:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product updated\",\n    \"data\": [\n        1,\n        [\n            {\n                \"uuid\": \"91460af5-43e0-414b-a62c-a9e6576068b4\",\n                \"name\": \"Asus Phone\",\n                \"description\": \"Asus Phone description\",\n                \"seo_slug\": \"asus-phone\",\n                \"stock\": 20,\n                \"price\": \"122.99\",\n                \"category_id\": \"7cd19215-b30b-47ee-b1b8-2e3fc0a9aecb\",\n                \"created_at\": \"2024-05-04T12:04:02.153Z\",\n                \"updated_at\": \"2024-05-04T12:17:47.791Z\"\n            }\n        ]\n    ]\n}"
+						},
+						{
+							"name": "Field Error",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Asus Rog 64 GB\",\n    \"description\": \"Asus rog 64 GB description\",\n    \"seo_slug\": \"asus-rog-64-gb\",\n    \"stock\": 100,\n    \"price\": 49.99,\n    \"category_id\": \"\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "53"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"35-mG+liygBjAmPYZpJ0RkToEW3J/w\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:04:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"category_id is required\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw",
+								"uuid": "9cca2342-bd58-45fe-bbee-d24512c7733e"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/products/91460af5-43e0-414b-a62c-a9e6576068b4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"products",
+								"91460af5-43e0-414b-a62c-a9e6576068b4"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Product",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products/91460af5-43e0-414b-a62c-a9e6576068b4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products",
+										"91460af5-43e0-414b-a62c-a9e6576068b4"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "56"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"38-wK6mXfve50SG6kSIt8K7g8zbqFE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:19:38 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Product deleted\",\n    \"data\": null\n}"
+						},
+						{
+							"name": "Not Found",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiZDRkYzAzNDItMDgxOC00ZDUxLThmNGUtMjg3ZDE3NjM4OGUxIiwiZW1haWwiOiJhQG1haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkMVVCUDN1ajE4azE0a2Uxb2k5NndpdXRRUVQzZmMzWTBJcDhqQjhHQTdzSGswd0JIT2lQN3UiLCJyb2xlIjoiRU1QTE9ZRUUiLCJjcmVhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloiLCJ1cGRhdGVkQXQiOiIyMDI0LTA1LTA0VDA2OjE4OjI3Ljg3MloifQ.golGGjemmBZZNy_kqQVs9IsA1u15j_6v3GSFPZuUWyw"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/products/91460af5-43e0-414b-a62c-a9e6576068b4",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"products",
+										"91460af5-43e0-414b-a62c-a9e6576068b4"
+									]
+								}
+							},
+							"status": "Not Found",
+							"code": 404,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "58"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3a-Kxemiles4Dm6n88lvEAU4XYSsAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 12:21:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Product not found\",\n    \"code\": 404\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Orders",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMWE4YTRhMDEtYmFhMS00YzQ5LTk5NjMtNzgwYjQxYzA1OWVhIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZVdGp5OEJQb1V2bWRnUVlkSXZmTHVRZ3pySUFNS0g2VHc3Y0MuTjZlWklVeVVTbzViaGFtIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDRUMTM6NDE6NDkuMzMxWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQxOjQ5LjMzMVoifQ.l4ScbodHlRi1raZtekY4mocsoIgPCIQemYQv0LisPvg",
+								"uuid": "be1f4880-7daf-41c5-8cc7-2a8d8ea82301"
+							}
+						],
+						"url": {
+							"raw": "{{host}}/v1/api/orders?page=1&limit=10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"orders"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1",
+									"description": "Start page"
+								},
+								{
+									"key": "limit",
+									"value": "10",
+									"description": "Size"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Orders",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiNjZhZmU0YTEtYWM4MS00ZTJmLTgwZDMtNmI0ZjQ4MzcxN2Q4IiwiZW1haWwiOiJ1c2VyMkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGI4ejI4TGJvY3hoOC9jd1J2UjEwaC4zQ2tlRGJpZnY0ZHE2YTdsak9zOU95N1pOWFROem8yIiwicm9sZSI6IkNVU1RPTUVSUyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQ0OjUzLjUxNFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wNFQxMzo0NDo1My41MTRaIn0.dFPM4H1lRA86xDE0gU6UJG6BVSsJEiLpD2QiMQr3kSI"
+									}
+								],
+								"url": {
+									"raw": "{{host}}/v1/api/orders?page=1&limit=10",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"orders"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1",
+											"description": "Start page"
+										},
+										{
+											"key": "limit",
+											"value": "10",
+											"description": "Size"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1397"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"575-qlaot4NPdmu/f0JlUU7OoABKv74\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 13:47:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"List of orders\",\n    \"data\": [\n        {\n            \"uuid\": \"b060534f-0473-4bb4-a666-96d767193cc7\",\n            \"user_id\": \"66afe4a1-ac81-4e2f-80d3-6b4f483717d8\",\n            \"total\": \"1279.98\",\n            \"status\": 0,\n            \"created_at\": \"2024-05-04T13:45:30.059Z\",\n            \"updated_at\": \"2024-05-04T13:45:30.059Z\",\n            \"order_details\": [\n                {\n                    \"uuid\": \"d584b207-8ae2-43ab-a753-636618861b47\",\n                    \"order_id\": \"b060534f-0473-4bb4-a666-96d767193cc7\",\n                    \"product_id\": null,\n                    \"quantity\": 1,\n                    \"price\": 49.99,\n                    \"created_at\": \"2024-05-04T13:45:30.063Z\",\n                    \"updated_at\": \"2024-05-04T13:45:30.063Z\"\n                },\n                {\n                    \"uuid\": \"a4073021-3e75-4117-9f3f-a798ba80974e\",\n                    \"order_id\": \"b060534f-0473-4bb4-a666-96d767193cc7\",\n                    \"product_id\": null,\n                    \"quantity\": 1,\n                    \"price\": 1229.99,\n                    \"created_at\": \"2024-05-04T13:45:30.066Z\",\n                    \"updated_at\": \"2024-05-04T13:45:30.066Z\"\n                }\n            ]\n        },\n        {\n            \"uuid\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n            \"user_id\": \"66afe4a1-ac81-4e2f-80d3-6b4f483717d8\",\n            \"total\": \"6649.85\",\n            \"status\": 0,\n            \"created_at\": \"2024-05-04T13:46:57.893Z\",\n            \"updated_at\": \"2024-05-04T13:46:57.893Z\",\n            \"order_details\": [\n                {\n                    \"uuid\": \"99c607c7-0e87-475e-b33c-91129c9ce5df\",\n                    \"order_id\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n                    \"product_id\": null,\n                    \"quantity\": 10,\n                    \"price\": 49.99,\n                    \"created_at\": \"2024-05-04T13:46:57.903Z\",\n                    \"updated_at\": \"2024-05-04T13:46:57.903Z\"\n                },\n                {\n                    \"uuid\": \"494b61df-ca25-4478-b2e4-bc35cd2f7293\",\n                    \"order_id\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n                    \"product_id\": null,\n                    \"quantity\": 5,\n                    \"price\": 1229.99,\n                    \"created_at\": \"2024-05-04T13:46:57.906Z\",\n                    \"updated_at\": \"2024-05-04T13:46:57.906Z\"\n                }\n            ]\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiNjZhZmU0YTEtYWM4MS00ZTJmLTgwZDMtNmI0ZjQ4MzcxN2Q4IiwiZW1haWwiOiJ1c2VyMkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGI4ejI4TGJvY3hoOC9jd1J2UjEwaC4zQ2tlRGJpZnY0ZHE2YTdsak9zOU95N1pOWFROem8yIiwicm9sZSI6IkNVU1RPTUVSUyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQ0OjUzLjUxNFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wNFQxMzo0NDo1My41MTRaIn0.dFPM4H1lRA86xDE0gU6UJG6BVSsJEiLpD2QiMQr3kSI",
+								"uuid": "c6ac1595-a67d-4970-a13a-970c5f5f2fde"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "[\n    {\n        \"productId\": \"b40da923-e63c-4c99-b881-4e8bfc922568\",\n        \"quantity\": 10\n    },\n    {\n        \"productId\": \"a6eab291-483f-4bca-a31c-cae269deb590\",\n        \"quantity\": 5\n    }\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Order",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiNjZhZmU0YTEtYWM4MS00ZTJmLTgwZDMtNmI0ZjQ4MzcxN2Q4IiwiZW1haWwiOiJ1c2VyMkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGI4ejI4TGJvY3hoOC9jd1J2UjEwaC4zQ2tlRGJpZnY0ZHE2YTdsak9zOU95N1pOWFROem8yIiwicm9sZSI6IkNVU1RPTUVSUyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQ0OjUzLjUxNFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wNFQxMzo0NDo1My41MTRaIn0.dFPM4H1lRA86xDE0gU6UJG6BVSsJEiLpD2QiMQr3kSI"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"productId\": \"b40da923-e63c-4c99-b881-4e8bfc922568\",\n        \"quantity\": 10\n    },\n    {\n        \"productId\": \"a6eab291-483f-4bca-a31c-cae269deb590\",\n        \"quantity\": 5\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/orders",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"orders"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "731"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2db-xzPpsjF9MHKYMJrvBPOWV8ZEQhM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 13:46:57 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order created\",\n    \"data\": {\n        \"order\": {\n            \"uuid\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n            \"user_id\": \"66afe4a1-ac81-4e2f-80d3-6b4f483717d8\",\n            \"total\": \"6649.85\",\n            \"status\": 0,\n            \"updated_at\": \"2024-05-04T13:46:57.893Z\",\n            \"created_at\": \"2024-05-04T13:46:57.893Z\"\n        },\n        \"orderDetails\": [\n            {\n                \"uuid\": \"99c607c7-0e87-475e-b33c-91129c9ce5df\",\n                \"order_id\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n                \"product_id\": null,\n                \"quantity\": 10,\n                \"price\": 49.99,\n                \"updated_at\": \"2024-05-04T13:46:57.903Z\",\n                \"created_at\": \"2024-05-04T13:46:57.903Z\"\n            },\n            {\n                \"uuid\": \"494b61df-ca25-4478-b2e4-bc35cd2f7293\",\n                \"order_id\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n                \"product_id\": null,\n                \"quantity\": 5,\n                \"price\": 1229.99,\n                \"updated_at\": \"2024-05-04T13:46:57.906Z\",\n                \"created_at\": \"2024-05-04T13:46:57.906Z\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Order Status",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMWE4YTRhMDEtYmFhMS00YzQ5LTk5NjMtNzgwYjQxYzA1OWVhIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZVdGp5OEJQb1V2bWRnUVlkSXZmTHVRZ3pySUFNS0g2VHc3Y0MuTjZlWklVeVVTbzViaGFtIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDRUMTM6NDE6NDkuMzMxWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQxOjQ5LjMzMVoifQ.l4ScbodHlRi1raZtekY4mocsoIgPCIQemYQv0LisPvg",
+								"uuid": "c6a54f52-efbb-4135-8302-d69dcfaf16db"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"newStatus\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/v1/api/orders/f0ba6f97-ff0b-4ac3-af3f-b585b819b76b/status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"v1",
+								"api",
+								"orders",
+								"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b",
+								"status"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Error Customer Authorization",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiNjZhZmU0YTEtYWM4MS00ZTJmLTgwZDMtNmI0ZjQ4MzcxN2Q4IiwiZW1haWwiOiJ1c2VyMkBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJGI4ejI4TGJvY3hoOC9jd1J2UjEwaC4zQ2tlRGJpZnY0ZHE2YTdsak9zOU95N1pOWFROem8yIiwicm9sZSI6IkNVU1RPTUVSUyIsImNyZWF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQ0OjUzLjUxNFoiLCJ1cGRhdGVkX2F0IjoiMjAyNC0wNS0wNFQxMzo0NDo1My41MTRaIn0.dFPM4H1lRA86xDE0gU6UJG6BVSsJEiLpD2QiMQr3kSI"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newStatus\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/orders/f0ba6f97-ff0b-4ac3-af3f-b585b819b76b/status",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"orders",
+										"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b",
+										"status"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "84"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"54-aBKSxlippGxondH3ZFcb3G1484k\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 13:51:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"You are not authorized to access this route\",\n    \"code\": 403\n}"
+						},
+						{
+							"name": "Success",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMWE4YTRhMDEtYmFhMS00YzQ5LTk5NjMtNzgwYjQxYzA1OWVhIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZVdGp5OEJQb1V2bWRnUVlkSXZmTHVRZ3pySUFNS0g2VHc3Y0MuTjZlWklVeVVTbzViaGFtIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDRUMTM6NDE6NDkuMzMxWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQxOjQ5LjMzMVoifQ.l4ScbodHlRi1raZtekY4mocsoIgPCIQemYQv0LisPvg"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newStatus\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/orders/f0ba6f97-ff0b-4ac3-af3f-b585b819b76b/status",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"orders",
+										"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b",
+										"status"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "262"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"106-bsSAFDOS79KPkh+R/xM/54JAHiY\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 13:53:45 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Order status updated\",\n    \"data\": {\n        \"uuid\": \"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b\",\n        \"user_id\": \"66afe4a1-ac81-4e2f-80d3-6b4f483717d8\",\n        \"total\": \"6649.85\",\n        \"status\": 1,\n        \"created_at\": \"2024-05-04T13:46:57.893Z\",\n        \"updated_at\": \"2024-05-04T13:53:45.277Z\"\n    }\n}"
+						},
+						{
+							"name": "Update Success Order",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJhbGciOiJIUzI1NiJ9.eyJ1dWlkIjoiMWE4YTRhMDEtYmFhMS00YzQ5LTk5NjMtNzgwYjQxYzA1OWVhIiwiZW1haWwiOiJlbXBsb3llZUBtYWlsLmNvbSIsInBhc3N3b3JkIjoiJDJiJDEwJFZVdGp5OEJQb1V2bWRnUVlkSXZmTHVRZ3pySUFNS0g2VHc3Y0MuTjZlWklVeVVTbzViaGFtIiwicm9sZSI6IkVNUExPWUVFIiwiY3JlYXRlZF9hdCI6IjIwMjQtMDUtMDRUMTM6NDE6NDkuMzMxWiIsInVwZGF0ZWRfYXQiOiIyMDI0LTA1LTA0VDEzOjQxOjQ5LjMzMVoifQ.l4ScbodHlRi1raZtekY4mocsoIgPCIQemYQv0LisPvg"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"newStatus\": 1\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/v1/api/orders/f0ba6f97-ff0b-4ac3-af3f-b585b819b76b/status",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"v1",
+										"api",
+										"orders",
+										"f0ba6f97-ff0b-4ac3-af3f-b585b819b76b",
+										"status"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "64"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"40-WWP+e4NWEhHBXYHUsSD0msI/YwE\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 04 May 2024 13:55:11 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": false,\n    \"message\": \"Order already completed\",\n    \"code\": 400\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

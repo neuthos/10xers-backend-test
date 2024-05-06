@@ -2,10 +2,26 @@
 
 This repository contains the source code for a Backend Developer Task: 10Xers, built using Express.js.
 
-Explanation video: https://www.loom.com/share/aed1ee03f4804547954037170711cac6?sid=edd5ff42-6694-45c2-b6e3-d3f4d78f6661
+---
+
+## Explanation video: https://www.loom.com/share/aed1ee03f4804547954037170711cac6?sid=edd5ff42-6694-45c2-b6e3-d3f4d78f6661
+
+---
 
 ERD Diagram:
 ![Alt text](https://github.com/neuthos/10xers-backend-test/blob/master/erd.png?raw=true)
+
+---
+
+You can access the Postman documentation through this link: [Postman Documentation](https://documenter.getpostman.com/view/14405527/2sA3JGgPo5)
+
+Alternatively, you can download and import it yourself using the following file:
+
+```
+./Mobile Phone Store.postman_collection.json
+```
+
+---
 
 #### Requirements
 
@@ -74,5 +90,5 @@ The server will start on port 3000 by default. You can access the application by
 To run tests, use:
 
 ```
-npm test
+npm run test
 ```
