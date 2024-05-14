@@ -28,7 +28,7 @@ module.exports = {
           updated_at: new Date(),
         },
         {
-          uuid: v4(),
+          uuid: "441a610f-05e9-47ae-807f-2e94ba818ce8",
           email: "employee@mail.com",
           role: "EMPLOYEE",
           password: await bcrypt.hash("employee", 10),

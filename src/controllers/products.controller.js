@@ -3,6 +3,8 @@ const productService = require("../services/product.service");
 
 const createProduct = async (req, res, next) => {
   try {
+    const userId = req.user.uuid;
+
     // There should be a better way, but for MVP first we can use this first
     const requiredFields = ["name", "price", "stock", "category_id"];
     for (const field of requiredFields) {
@@ -10,6 +12,9 @@ const createProduct = async (req, res, next) => {
         return errorHandler(res, `${field} is required`);
       }
     }
+
+    // Add User ID to body
+    req.body.user_id = userId;
 
     const newProduct = await productService.createProduct(req.body);
 
@@ -33,8 +38,16 @@ const getProductById = async (req, res, next) => {
 
 const listProducts = async (req, res, next) => {
   try {
-    const {query, page, limit} = req.query;
-    const productList = await productService.list(query, page, limit);
+    const {query, page, limit, user_id, sort, sort_by} = req.query;
+    const productList = await productService.list(
+      query,
+      page,
+      limit,
+      user_id,
+      sort,
+      sort_by
+    );
+
     return successHandler(res, "List of products", productList);
   } catch (error) {
     next(error);

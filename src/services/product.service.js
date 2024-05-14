@@ -11,16 +11,27 @@ const getProductById = (productId) => {
   return product;
 };
 
-const list = async (query = "", page = 1, limit = 10) => {
+const list = async (
+  query = "",
+  page = 1,
+  limit = 10,
+  user_id = "",
+  sort = "ASC",
+  sort_by = "price"
+) => {
   let where = {};
 
   if (query) where.name = {[Op.iLike]: `%${query}%`};
+  if (user_id) where.user_id = user_id;
+
+  console.log({sort, sort_by});
   const offset = (page - 1) * limit;
   const products = await Product.findAndCountAll({
     where,
     offset,
     limit,
     attributes: ["uuid", "name", "price", "description", "seo_slug", "stock"],
+    order: [[sort_by, sort]],
   });
 
   const totalPages = Math.ceil(products.count / limit);
